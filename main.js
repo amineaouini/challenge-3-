@@ -12,10 +12,31 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
-    return {
-        name: name,
-        salary: salary
+    function addFriend (otherEmloyee) {
+    return ["name"] + otherEmloyee;
     }
+
+    function sayMyName (){
+    return name;
+    }
+
+    function sayHello (employee){
+    return "hello" + name;
+    }
+
+    function increaseSalary(n) {
+    salary = n + salary;
+    return salary;
+    }
+
+    return {sayMyName: sayMyName(),
+    sayHello: sayHello(),
+    salary: salary,
+    increaseSalary: increaseSalary(n),
+    addFriend: addFriend(otherEmloyee)
+    }
+    
+    
 }
 
 var employeeA = employee("jack", 100);
@@ -29,19 +50,26 @@ var employeeC = employee("Sara", 150);
 // employeeB.sayMyName(); // "Mark"
 
 
+
+
 //now modify that closure and add a function that says hello to the employee name;
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
+
+
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
+
+
 
 //modify your closure to tell mark how many friends does he have.
 
@@ -54,8 +82,6 @@ var employeeC = employee("Sara", 150);
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
-// var pet1 = Pet("doggy");
-
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
 
 // pet1.addInfo(age, owner, gender, species);
@@ -64,14 +90,47 @@ var employeeC = employee("Sara", 150);
 
 // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
 
+
 // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
 //    and when called again it will make it false.
 
 
 // Write your code here .....
 
+function pet(name){
+    var obj = {};
+
+    obj.name = name;
+
+    return obj;
+}
+
+var pet1 = Pet("doggy");
+
+function addInfo(age, owner, gender, species) {
+    obj.age = age;
+    obj.owner = owner;
+    obj.gender = gender;
+    obj.species = species;
+}
+
+function increaseAge (n){
+    this.age = this.age + n; 
+
+    return this.age;
+}
+
+var availability = function(name) {
+    if (name = this.name) {
+        return true
+    }
+
+    return false;
+}
+
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+YES I AM
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -103,7 +162,12 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
-
+function max(arr) {
+    return reduce(arr, function(arr, element, i){
+        
+        if (x )
+    })
+}
 
 
 //================================================================================
